@@ -1,0 +1,79 @@
+{
+  "name": "n8n-nodes-opsgenie",
+  "version": "1.0.0",
+  "description": "A comprehensive n8n community node for Opsgenie providing 12 resources and 100+ operations for alert management, incident response, on-call scheduling, and team coordination.",
+  "license": "BUSL-1.1",
+  "author": {
+    "name": "Velocity BPA",
+    "email": "licensing@velobpa.com",
+    "url": "https://velobpa.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-opsgenie.git"
+  },
+  "homepage": "https://github.com/Velocity-BPA/n8n-nodes-opsgenie",
+  "bugs": {
+    "url": "https://github.com/Velocity-BPA/n8n-nodes-opsgenie/issues"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node-package",
+    "opsgenie",
+    "atlassian",
+    "incident-management",
+    "alert-management",
+    "on-call",
+    "devops",
+    "monitoring",
+    "incident-response",
+    "automation"
+  ],
+  "main": "dist/nodes/Opsgenie/Opsgenie.node.js",
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/OpsgenieApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Opsgenie/Opsgenie.node.js",
+      "dist/nodes/Opsgenie/OpsgenieTrigger.node.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "lint": "eslint nodes credentials --ext .ts",
+    "lint:fix": "eslint nodes credentials --ext .ts --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "prepublishOnly": "npm run build",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.20",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "^1.27.0",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
